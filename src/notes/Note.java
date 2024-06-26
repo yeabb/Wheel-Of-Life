@@ -11,9 +11,9 @@ public class Note {
 
     public String noteContent;
 
-    public String noteId;
+    final public String noteId;
 
-    public Date dayCreated;
+    final public Date dayCreated;
 
     public Date noteType;
 

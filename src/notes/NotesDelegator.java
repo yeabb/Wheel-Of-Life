@@ -9,7 +9,7 @@ public class NotesDelegator {
 
     public Map<String, Note> notes;
 
-    public Note createNote(
+    public Note createNewNote(
             final String note,
             final Date noteType,
             final String noteUrgency,
@@ -37,7 +37,7 @@ public class NotesDelegator {
         notes.remove(noteId);
     }
 
-    public void addNewNote(Note newNote){
+    private void addNewNote(Note newNote){
         notes.put(newNote.noteId, newNote);
     }
 
@@ -48,5 +48,7 @@ public class NotesDelegator {
     public Note getNote(String noteId){
         return notes.get(noteId);
     }
+
+    public Note change
 
 }
