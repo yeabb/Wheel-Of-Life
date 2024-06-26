@@ -11,18 +11,30 @@ public class Note {
 
     public String noteContent;
 
-    public Long noteId;
+    public String noteId;
 
     public Date dayCreated;
 
     public Date noteType;
 
+    public String noteUrgency;
+
+    public String status;
+
     public Date lastEdited;
 
 
 
-    public Note(final String note, final Long noteId, final Date dayCreated, final Date noteType, final Date lastEdited){
-        this.noteContent = note;
+    public Note(
+            final String noteContent,
+            final String noteId,
+            final Date dayCreated,
+            final Date noteType,
+            final String noteUrgency,
+            final String status,
+            final Date lastEdited)
+    {
+        this.noteContent = noteContent;
 
         this.noteId = noteId;
 
@@ -31,6 +43,10 @@ public class Note {
         this.noteType = noteType;
 
         this.lastEdited = lastEdited;
+
+        this.noteUrgency = noteUrgency;
+
+        this.status = status;
 
 
     }

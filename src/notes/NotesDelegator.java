@@ -1,13 +1,39 @@
 package notes;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.Map;
+import java.util.UUID;
 
 public class NotesDelegator {
 
-    public Map<Long, Note> notes;
+    public Map<String, Note> notes;
 
-    public void deleteNote(Long noteId){
+    public Note createNote(
+            final String note,
+            final Date noteType,
+            final String noteUrgency,
+            final String status
+            )
+    {
+        final String notId = UUID.randomUUID().toString();
+
+        final Date now = new Date();
+
+        Note newNote = new Note(
+                note,
+                notId,
+                now,
+                noteType,
+                noteUrgency,
+                status,
+                now);
+
+        addNewNote(newNote);
+        return newNote;
+    }
+
+    public void deleteNote(String noteId){
         notes.remove(noteId);
     }
 
@@ -17,6 +43,10 @@ public class NotesDelegator {
 
     public void EditNote(Note editNote){
 
+    }
+
+    public Note getNote(String noteId){
+        return notes.get(noteId);
     }
 
 }
