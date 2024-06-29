@@ -2,17 +2,18 @@ package notes;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 public class NotesDelegator {
 
-    public Map<String, Note> notes;
+    public Map<String, Note> notes = new HashMap<>();
 
     public Note createNewNote(
             final String note,
-            final Date noteType,
-            final String noteUrgency,
+            final String noteType,
+            final int noteUrgency,
             final String status
             )
     {
@@ -37,11 +38,10 @@ public class NotesDelegator {
         notes.remove(noteId);
     }
 
-    private void addNewNote(Note newNote){
-        notes.put(newNote.noteId, newNote);
-    }
-
-    public void EditNote(Note editNote){
+    public void editNoteContent(String noteId, String newContent){
+        Note note = getNote(noteId);
+        note.setNoteContent(newContent);
+        note.setLastEdited(new Date());
 
     }
 
@@ -49,6 +49,8 @@ public class NotesDelegator {
         return notes.get(noteId);
     }
 
-    public Note change
+    private void addNewNote(Note newNote){
+        notes.put(newNote.noteId, newNote);
+    }
 
 }

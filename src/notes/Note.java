@@ -15,9 +15,9 @@ public class Note {
 
     final public Date dayCreated;
 
-    public Date noteType;
+    public String noteType;
 
-    public String noteUrgency;
+    public int noteUrgency;
 
     public String status;
 
@@ -29,8 +29,8 @@ public class Note {
             final String noteContent,
             final String noteId,
             final Date dayCreated,
-            final Date noteType,
-            final String noteUrgency,
+            final String noteType,
+            final int noteUrgency,
             final String status,
             final Date lastEdited)
     {
