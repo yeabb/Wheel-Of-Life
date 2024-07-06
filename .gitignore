@@ -2,7 +2,21 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-.iml
+*.iml
+.idea/
+
+# Ignore build output directories
+/build/
+/out/
+
+# Ignore Gradle-specific files
+.gradle/
+/gradle/
+/gradlew
+/gradlew.bat
+
+# Ignore Lombok-generated files (if applicable)
+delombok/
 
 ### Eclipse ###
 .apt_generated
